@@ -1,0 +1,31 @@
+version: 0.2
+env:
+    variables:
+        CACHE_CONTROL: "86400"
+        BUILD_ENV: "prod"
+        S3_BUCKET : "cicdoutputartifact"
+        BUILD_FOLDER : "target"
+phases:
+    install:
+        runtime-versions:
+            maven: 3.5.2
+        commands:
+            - echo Installing source mvn dependencies...
+            - sudo apt update
+            - sudo apt install maven
+            - sudo apt install default-jdk
+           
+    build:
+        commands:
+            - echo Build started on `date`
+            - mvn clean install 
+    post_build:
+     commands:
+      - echo Build completed on `date`
+       -aws s3 cp ${BUILD_FOLDER} s3://${S3_BUCKET} --recursive
+artifacts: 
+  base-directory: target*
+  files: 
+    - "*/*"
+    - 'appspec.yml'
+    - 'scripts'
