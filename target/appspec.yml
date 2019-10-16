@@ -1,6 +1,6 @@
 files:
   - source: /
-    destination: /home/ubuntu/nodejs
+    destination: /opt/wildfly/wildfly-16.0.0.Final/wildfly-16.0.0.Final/standalone/deployments
 hooks:
 
 
