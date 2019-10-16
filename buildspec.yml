@@ -12,8 +12,9 @@ phases:
         commands:
             - echo Installing source mvn dependencies...
             - apt-get update
-            - apt install maven
             - apt install default-jdk
+            - apt install maven
+            
            
     build:
         commands:
