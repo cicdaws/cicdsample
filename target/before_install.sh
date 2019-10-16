@@ -1,5 +1,5 @@
 cd /home/ubuntu/
 sudo systemctl stop wildfly
 
-cd /opt/wildfly/wildfly-16.0.0.Final/wildfly-16.0.0.Final/standalone/deployments
-sudo rm CICDSample-0.0.1-SNAPSHOT.war
+#cd /opt/wildfly/wildfly-16.0.0.Final/wildfly-16.0.0.Final/standalone/deployments
+#sudo rm CICDSample-0.0.1-SNAPSHOT.war
