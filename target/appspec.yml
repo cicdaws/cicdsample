@@ -6,7 +6,10 @@ files:
     destination: /opt/wildfly/wildfly-16.0.0.Final/wildfly-16.0.0.Final/standalone/deployments
     
 hooks:
-
+  BeforeInstall:
+    - location: before_install.sh
+      timeout: 300
+      runas: ubuntu
 
   ApplicationStart:
     - location: app_start.sh
