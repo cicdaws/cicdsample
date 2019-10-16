@@ -11,9 +11,9 @@ phases:
             java: openjdk8
         commands:
             - echo Installing source mvn dependencies...
-            - sudo apt update
-            - sudo apt install maven
-            - sudo apt install default-jdk
+            - sudo apt-get update
+            - sudo apt-get install maven
+            - sudo apt-get install default-jdk
            
     build:
         commands:
